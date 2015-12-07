@@ -15,14 +15,14 @@ Let's take a look at each of these collaborations in more detail.
 
 ## MP3 Importer collaborating with Songs
 
-The purpose of this MP3 Importer is to take in a list of mp3s and send each mp3 filename to the `Song` class to make a `Song`. Let's just focus on the collaboration. Our `MP3Importer` class will receive a list of filenames that look like this "Drake - Hot Line Bling". `MP3Importer` will then send each of those filenames to the `Song` class to be created.
+The purpose of this MP3 Importer is to take in a list of mp3s and send each mp3 filename to the `Song` class to make a `Song`. Let's just focus on the collaboration. Our `MP3Importer` class will receive a list of filenames that look like this "Drake - Hotline Bling". `MP3Importer` will then send each of those filenames to the `Song` class to be created.
 
 ```ruby
 class Song
   attr_accessor :title
 
   def self.new_by_filename(filename)
-    self.title = filename.splt(" - ")[1]
+    self.title = filename.split(" - ")[1]
   end
 
 end
@@ -81,5 +81,3 @@ hotline_bling.artist
 ```
 
 This should then return the new `Artist` object that was created by the `#artist_name` method. This is just another example of how objects can collaborate without being directly related. 
-
-<a href='https://learn.co/lessons/ruby-collaborating-objects-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
